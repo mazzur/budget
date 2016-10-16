@@ -13,6 +13,6 @@ export default connect(({categories}, {route: {type}}) => ({
 
 function selectCategoryNames(categories, type) {
     return categories
-        .filter((entry) => entry.type === type)
-        .map((category) => category.value);
+        .filter((entry) => entry.get('type') === type)
+        .map((category) => category.get('value'));
 }

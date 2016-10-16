@@ -11,12 +11,12 @@ export default class TransactionList extends Component {
 
     render() {
         const transactions = this.props.transactions;
-        return transactions.length
+        return transactions.size
             ? <ul> {transactions.map((transaction, id) => (
             <li key={id}>
-                <span>{transaction.amount}</span>
-                <span>{transaction.category}</span>
-                <span>{transaction.description}</span>
+                <span>{transaction.get('amount')}</span>
+                <span>{transaction.get('category')}</span>
+                <span>{transaction.get('description')}</span>
             </li>
         ))} </ul>
             : <div>Nothing</div>;

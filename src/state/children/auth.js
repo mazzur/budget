@@ -1,7 +1,8 @@
 import firebase from 'firebase';
+import { Map, fromJS } from 'immutable';
 
 export const loginWithGithub = () => (dispatch) => {
-    firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider()).then(function(result) {
+    firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider()).then(function (result) {
         debugger;
     }, () => {
         debugger;
@@ -16,13 +17,12 @@ export const authSuccess = (user) => ({
     user
 });
 
-export default (state = {}, action) => {
+export default (state = new Map(), action) => {
     switch (action.type) {
     case LOGIN_SUCCESS:
-        return Object.assign(state, {
+        return fromJS({
             user: action.user
         });
-        break;
     default:
         return state;
     }

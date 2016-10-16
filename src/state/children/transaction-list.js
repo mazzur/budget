@@ -1,3 +1,5 @@
+import { List, fromJS } from 'immutable';
+
 const TRANSACTIONS_FETCHED = 'TRANSACTIONS_FETCHED';
 export const fetchTransactions = () => (dispatch, getState, API) => {
     return API.getTransactions().then((transactions) => {
@@ -16,11 +18,10 @@ export const submitTransaction = (transaction) => (dispatch, getState, API) => {
         }));
 };
 
-export default (state = [], action) => {
+export default (state = new List(), action) => {
     switch (action.type) {
     case TRANSACTIONS_FETCHED:
-        return [].concat(action.transactions);
-        break;
+        return fromJS(action.transactions);
     default:
         return state;
     }

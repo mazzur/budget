@@ -1,4 +1,6 @@
-export const CATEGORIES_FETCHED = 'CATEGORIES_FETCHED';
+import { fromJS, List } from 'immutable';
+
+const CATEGORIES_FETCHED = 'CATEGORIES_FETCHED';
 export const fetchCategories = (type) => (dispatch, getState, API) => {
     return API.getCategories().then((categories) => {
         dispatch({
@@ -8,10 +10,10 @@ export const fetchCategories = (type) => (dispatch, getState, API) => {
     });
 };
 
-export default (state = [], action) => {
+export default (state = new List(), action) => {
     switch (action.type) {
     case CATEGORIES_FETCHED:
-        return [].concat(action.categories);
+        return fromJS(action.categories);
     default:
         return state;
     }
