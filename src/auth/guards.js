@@ -1,4 +1,3 @@
-import firebase from 'firebase';
 import { store } from '../store';
 
 export const requireAuth = (nextState, replace) => {
@@ -18,5 +17,3 @@ export const notAuth = (nextState, replace) => {
         });
     }
 };
-
-

@@ -6,11 +6,11 @@ import API from './api/api.facade';
 export const store = createStore(
     rootReducer,
     applyMiddleware(thunk.withExtraArgument(API))
-  );
+);
 
-  if (module.hot) {
+if (module.hot) {
     module.hot.accept('./state/index.js', () => {
-      const nextRootReducer = require('./state/index.js');
-      store.replaceReducer(nextRootReducer);
+        const nextRootReducer = require('./state/index.js'); // eslint-disable-line global-require
+        store.replaceReducer(nextRootReducer);
     });
-  }
+}

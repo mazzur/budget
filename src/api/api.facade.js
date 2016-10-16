@@ -1,5 +1,5 @@
-import {getTransactions, submitTransaction} from './firebase/transactions';
-import {getCategories} from './firebase/categories';
+import { getTransactions, submitTransaction } from './firebase/transactions';
+import { getCategories } from './firebase/categories';
 
 export default {
     getTransactions,

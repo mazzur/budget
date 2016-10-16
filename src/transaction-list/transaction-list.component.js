@@ -1,10 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-export default class TransactionList extends Component {
-    props: {
-        fetchTransactions: any
-    };
-
+export class TransactionList extends Component {
     componentWillMount() {
         this.props.fetchTransactions();
     }

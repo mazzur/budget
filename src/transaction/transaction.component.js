@@ -1,6 +1,4 @@
-// @flow
-
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import DatePicker from 'material-ui/DatePicker';
 
 export const TRANSACTION_TYPES = {
@@ -9,12 +7,6 @@ export const TRANSACTION_TYPES = {
 };
 
 export class Transaction extends Component {
-    props: {
-        type: number,
-        fetchCategories: any,
-        categories: [any]
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -29,8 +21,8 @@ export class Transaction extends Component {
     }
 
     submitTransaction(category) {
-        const {amount, description, date} = this.state;
-        const {type} = this.props;
+        const { amount, description, date } = this.state;
+        const { type } = this.props;
         this.props.submitTransaction({
             type,
             category,
@@ -41,20 +33,20 @@ export class Transaction extends Component {
     }
 
     render() {
-        const {categories} = this.props;
+        const { categories } = this.props;
         const categoryList = categories.map((category, id) => (
             <button onClick={() => this.submitTransaction(category)} key={id}>{category}</button>
         ));
 
         return (
             <div>
-                <DatePicker hintText="Select Date"/>
-                <input type="number" placeholder="0" value={this.state.amount}/>
-                <input type="text" placeholder="description" value={this.state.description}/>
+                <DatePicker hintText="Select Date" />
+                <input type="number" placeholder="0" value={this.state.amount} />
+                <input type="text" placeholder="description" value={this.state.description} />
                 <p>
                     {categoryList}
                 </p>
             </div>
-        )
+        );
     }
 }

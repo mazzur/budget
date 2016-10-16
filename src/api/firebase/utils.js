@@ -12,7 +12,7 @@ function resolveList(resolve) {
         const dataMap = snapshot.val();
         resolve(
             Object.keys(dataMap)
-                .map((key) => dataMap[key])
+                .map(key => dataMap[key])
         );
-    }
+    };
 }

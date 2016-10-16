@@ -1,10 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router';
 import App from './App';
 import Home from './home/home.component';
 import Auth from './auth/auth.page';
 import Transaction from './transaction';
 import { requireAuth, notAuth } from './auth/guards';
-import { Route } from 'react-router';
 import { TRANSACTION_TYPES } from './transaction/transaction.component';
 
 export default (
@@ -15,11 +15,13 @@ export default (
         path="/spending"
         component={Transaction}
         onEnter={requireAuth}
-        type={TRANSACTION_TYPES.SPENDING} />
+        type={TRANSACTION_TYPES.SPENDING}
+      />
       <Route
         path="/receiving"
         component={Transaction}
         onEnter={requireAuth}
-        type={TRANSACTION_TYPES.RECEIVING} />
+        type={TRANSACTION_TYPES.RECEIVING}
+      />
   </Route>
 );

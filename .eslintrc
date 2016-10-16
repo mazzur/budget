@@ -1,0 +1,35 @@
+{
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/jsx-indent": [0],
+    "react/jsx-indent-props": [0],
+    "max-len": [1, 120],
+    "linebreak-style": [0],
+    "import/prefer-default-export": [0],
+    "comma-dangle": ["error", "never"],
+    "react/prop-types": [0]
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb"
+}

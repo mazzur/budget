@@ -1,9 +1,9 @@
-import {connect} from 'react-redux';
-import {Transaction} from './transaction.component';
-import {fetchCategories} from '../state/children/category-list';
-import {submitTransaction} from '../state/children/transaction-list';
+import { connect } from 'react-redux';
+import { Transaction } from './transaction.component';
+import { fetchCategories } from '../state/children/category-list';
+import { submitTransaction } from '../state/children/transaction-list';
 
-export default connect(({categories}, {route: {type}}) => ({
+export default connect(({ categories }, { route: { type } }) => ({
     categories: selectCategoryNames(categories, type),
     type
 }), {
@@ -13,6 +13,6 @@ export default connect(({categories}, {route: {type}}) => ({
 
 function selectCategoryNames(categories, type) {
     return categories
-        .filter((entry) => entry.get('type') === type)
-        .map((category) => category.get('value'));
+        .filter(entry => entry.get('type') === type)
+        .map(category => category.get('value'));
 }
