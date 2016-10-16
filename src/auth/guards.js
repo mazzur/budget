@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import store from '../store';
+import { store } from '../store';
 
 export const requireAuth = (nextState, replace) => {
     if (!store.getState().auth.get('user')) {

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { render } from 'react-dom';
-import configureStore from './store';
+import { store } from './store';
 import { authSuccess } from './state/children/auth';
 import firebase, { initializeApp } from 'firebase';
 import { FIREBASE_CONFIG } from './api/firebase/config';
@@ -12,7 +12,6 @@ import Root from './Root';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
-const store = configureStore();
 
 initializeApp(FIREBASE_CONFIG);
 firebase.auth().onAuthStateChanged((user) => {

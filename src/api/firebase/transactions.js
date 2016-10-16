@@ -1,4 +1,4 @@
-import store from '../../store';
+import { store } from '../../store';
 import firebase from 'firebase';
 import {fetchFirebaseList} from './utils';
 const transactionPath = (id) => `transactions/${store.getState().auth.get('user').uid}`;

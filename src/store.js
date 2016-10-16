@@ -3,8 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './state';
 import API from './api/api.facade';
 
-export default function configureStore() {
-  const store = createStore(
+export const store = createStore(
     rootReducer,
     applyMiddleware(thunk.withExtraArgument(API))
   );
@@ -15,9 +14,3 @@ export default function configureStore() {
       store.replaceReducer(nextRootReducer);
     });
   }
-
-  return store;
-
-}
-
-
