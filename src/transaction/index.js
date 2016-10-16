@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {Transaction} from './transaction.component';
-import {fetchCategories, submitTransaction} from './transaction.actions';
+import {fetchCategories} from '../state/children/category-list';
+import {submitTransaction} from '../state/children/transaction-list';
 
 export default connect(({categories}, {route: {type}}) => ({
     categories: selectCategoryNames(categories, type),

@@ -10,7 +10,7 @@ import { Router, Route, Redirect } from 'react-router';
 import { hashHistory } from 'react-router';
 import firebase, { initializeApp } from 'firebase';
 import { requireAuth, notAuth } from './auth/guards';
-import { authSuccess } from './auth/auth.page/auth.actions';
+import { authSuccess } from './state/children/auth';
 import { FIREBASE_CONFIG } from './api/firebase/config';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Transaction from './transaction';
