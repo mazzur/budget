@@ -8,13 +8,13 @@ import store from './store';
 import { Provider } from 'react-redux'
 import { Router, Route, Redirect } from 'react-router';
 import { hashHistory } from 'react-router';
-import firebase, {initializeApp} from 'firebase';
-import {requireAuth, notAuth} from './auth/guards';
-import {authSuccess} from './auth/auth.page/auth.actions';
-import {FIREBASE_CONFIG} from './api/firebase/config';
+import firebase, { initializeApp } from 'firebase';
+import { requireAuth, notAuth } from './auth/guards';
+import { authSuccess } from './auth/auth.page/auth.actions';
+import { FIREBASE_CONFIG } from './api/firebase/config';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Transaction from './transaction';
-import {TRANSACTION_TYPES} from './transaction/transaction.component';
+import { TRANSACTION_TYPES } from './transaction/transaction.component';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Needed for onTouchTap
