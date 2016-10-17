@@ -5,6 +5,6 @@ import routes from './routes';
 
 export default ({ store }) => (
     <Provider store={store}>
-        <Router history={browserHistory}>{routes}</Router>
+        <Router key={new Date()} history={browserHistory} >{routes}</Router>
     </Provider>
 );
